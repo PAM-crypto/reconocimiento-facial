@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Asistencia por Reconocimiento Facial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<!-- stylesheet css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/templatemo-blue.css">
+	<style>
+		/* Asegurar que los contenedores tengan la misma altura */
+		.skills, .about {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.col-md-6 {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
+
+<!-- preloader section -->
+<div class="preloader">
+	<div class="sk-spinner sk-spinner-wordpress">
+		<span class="sk-inner-circle"></span>
+	</div>
+</div>
+
+<!-- header section -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 text-center">
+				<img src="images/logo.png" class="img-responsive img-circle tm-border" alt="Asistencia por Reconocimiento Facial">
+				<hr>
+				<h1 class="tm-title bold shadow">BIENVENIDOS A DS3A</h1>
+				<h1 class="white bold shadow">ASISTENCIA POR RECONOCIMIENTO FACIAL</h1>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- about and skills section -->
+<section class="container">
+	<div class="row">
+		<!-- Sección "Sobre Nosotros" -->
+		<div class="col-md-6 col-sm-12">
+			<div class="about">
+				<h3 class="accent">Sobre nosotros</h3>
+				<p>Somos un equipo de desarrolladores apasionados por la innovación tecnológica y comprometidos con la creación de soluciones que optimicen la eficiencia en entornos educativos y laborales. Nuestro enfoque principal es aprovechar la inteligencia artificial para facilitar y automatizar procesos que anteriormente requerían mucho tiempo y esfuerzo manual.
+                       <p>Visión</p>
+						<p>En FACE ID (Reconocimiento facial), creemos que la tecnología puede ser una herramienta poderosa para mejorar la gestión del tiempo y recursos en diversas instituciones. Nuestra visión es reducir la complejidad y aumentar la precisión en el seguimiento de la asistencia, utilizando métodos modernos y efectivos como el reconocimiento facial.</p>
+				</p>
+			</div>
+		</div>
+		<!-- Sección "Skills" -->
+		<div class="col-md-6 col-sm-12">
+			<div class="skills">
+				<h2 class="white">Porcentaje de programa utilizados</h2>
+
+				<strong>Python & OpenCV</strong>
+				<span class="pull-right">90%</span>
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" 
+					aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+				</div>
+
+				<strong>Reconocimiento Facial (Deep Learning)</strong>
+				<span class="pull-right">85%</span>
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" 
+					aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+				</div>
+
+				<strong>Flask (Back-end)</strong>
+				<span class="pull-right">75%</span>
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" 
+					aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+				</div>
+
+				<strong>HTML/CSS (Front-end)</strong>
+				<span class="pull-right">80%</span>
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" 
+					aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+				</div>
+
+				<strong>MySQL (Base de Datos)</strong>
+				<span class="pull-right">70%</span>
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" 
+					aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- footer section -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<p>Copyright &copy; 2084 Your Easy Profile</p>
+				<ul class="social-icons">
+					<li><a href="#" class="fa fa-facebook"></a></li>
+					<li><a href="#" class="fa fa-google-plus"></a></li>
+					<li><a href="#" class="fa fa-twitter"></a></li>
+					<li><a href="#" class="fa fa-dribbble"></a></li>
+					<li><a href="#" class="fa fa-github"></a></li>
+					<li><a href="#" class="fa fa-behance"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- javascript js -->	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>	
+<script src="js/jquery.backstretch.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+	document.getElementById('btn-registrar').addEventListener('click', function() {
+		fetch('http://localhost:5000/ejecutar_registro', {
+			method: 'POST'
+		})
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			return response.json();
+		})
+		.then(data => {
+			alert(data.message);
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			alert('Error al ejecutar el registro facial');
+		});
+	});
+</script>
+
+</body>
+</html>
